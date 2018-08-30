@@ -53,14 +53,14 @@ class SnackbarItem extends Component {
                 <SnackbarContent
                     className={classes[variant]}
                     aria-describedby="client-snackbar"
-                    message={
+                    message={(
                         <span id="client-snackbar" className={classes.message}>
                             <span className={classes.iconVariant}>
                                 {variantIcon[variant]}
                             </span>
                             {message}
                         </span>
-                    }
+                    )}
                 />
             </Snackbar>
         );
@@ -70,6 +70,7 @@ class SnackbarItem extends Component {
 SnackbarItem.propTypes = {
     classes: PropTypes.object.isRequired,
     level: PropTypes.number.isRequired,
+    anchorOrigin: PropTypes.object.isRequired,
     snack: PropTypes.shape({
         message: PropTypes.string.isRequired,
         variant: PropTypes.oneOf(
